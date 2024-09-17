@@ -1,13 +1,38 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Todo List</title>
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+
+<body class="bg-gray-100">
+  <div class="container mx-auto max-w-lg pt-10">
+    <h1 class="text-center text-3xl font-bold text-gray-800">Todo List</h1>
+    <div class="flex justify-center pt-5 space-x-3">
+      <input id="inpt" class="border border-gray-300 rounded-md p-2 w-2/3 focus:outline-none focus:ring-2 focus:ring-red-600" type="text" placeholder="Add a new task">
+      <button id="btn" class="bg-red-600 text-white p-2 px-4 rounded-md shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600">
+        Add
+      </button>
+    </div>
+    <div id="NewItem" class="mt-6 bg-white p-4 rounded-md shadow-md"></div>
+  </div>
+
+  <script>
+    const addBtn = document.getElementById('btn');
+    const toContainer = document.getElementById('NewItem');
+    const inputField = document.getElementById('inpt');
+
+    addBtn.addEventListener('click', function() {
+      var para = document.createElement('p');
+      para.innerText = inputField.value;
+      para.classList.add('p-2', 'bg-gray-100', 'mt-2', 'rounded-md', 'flex', 'justify-between', 'items-center', 'shadow-sm');
+
+      
+    });
+  </script>
 </body>
+
 </html>
